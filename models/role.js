@@ -13,10 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Role.belongsToMany(models.Permission,{
         through: models.RolePermission,
-        as: ' permission'
+        as: ' permission',
+        foreignKey: 'role_id',
+        otherKey: 'permission_id'
       })
     }
-  }
+  };
   Role.init({
     name: DataTypes.STRING
   }, {
