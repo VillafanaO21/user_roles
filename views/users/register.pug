@@ -13,17 +13,17 @@ block content
                     div.input-container
                         label(for="last_name").form-label Last Name
                         input( name="last_name" id="last_name" required=true).form-control
-                    div.input-container.wide
-                        label(for="email").form-label Email Adress
-                        input(type="email" name="email" id="email" required=true)
-                        div.helper-text This is how you will log in
-                    div.input-container
-                        label(for="password").form-label Password
-                        input(type="password" name="password" id="password" required=true)
-                        div.helper-text Must be 8-20 characters long.
-                    div.input-container
-                        label(for="role").form-label Role
-                        select(id="role" name="role")
-                            each role in roles
-                                option(values=role.id) #{role.name}
-                    button.button.primary(type="submit") Register
+                div.input-container.wide
+                    label(for="email").form-label Email Adress
+                    input(type="email" name="email" id="email" required=true)
+                    div.helper-text This is how you will log in
+                div.input-container
+                    label(for="password").form-label Password
+                    input(type="password" name="password" id="password" required=true)
+                    div.helper-text Must be 8-20 characters long.
+                div.input-container
+                    label(for="role").form-label Role
+                    select(id="role" name="role")
+                        each role in roles
+                            option(values=role.id) #{role.name}
+                button.button.primary(type="submit") Register
