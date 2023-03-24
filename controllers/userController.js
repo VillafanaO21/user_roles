@@ -3,6 +3,7 @@ const md5 = require('md5');
 
 module.exports.renderRegistrationForm = async function(req, res){
     const roles = await Role.findAll();
+    console.log(roles)
     res.render('users/register', {
         roles
     })
@@ -17,4 +18,7 @@ module.exports.registerUser = async function(req, res){
         role_id: req.body.role
     })
     res.redirect('/');
+}
+module.exports.renderLoginForm = function(req, res){
+    res.render('users/login');
 }

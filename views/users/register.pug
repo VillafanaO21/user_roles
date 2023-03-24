@@ -25,5 +25,5 @@ block content
                     label(for="role").form-label Role
                     select(id="role" name="role")
                         each role in roles
-                            option(values=role.id) #{role.name}
+                            option(value=role.id) #{role.name}
                 button.button.primary(type="submit") Register
