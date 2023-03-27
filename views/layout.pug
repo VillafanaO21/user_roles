@@ -10,6 +10,8 @@ html
 
         h3 User Permissions
         ul.nav.justify-content-end.main-nav
+          if user
+            if user.can('view dashboard')
           li.nav-item
             a.nav-link(href="/") Dashboard
           li.nav-item
@@ -23,6 +25,7 @@ html
           li.nav-item
             a.nav-link(href="/login") Login
           li.nav-item
+            a.nav-link(href="/layout") Layout
             a.nav-link(href="/register") Register
 
     div.container

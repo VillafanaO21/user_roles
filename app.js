@@ -20,7 +20,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+    session({
+      secret: 'keyboard cat',
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        secure: false,
+        maxAge: 6*60*60*100
+      }
+    })
+);
+const {passport} = require('./middleware/passport.js')
+//init passport
+app.use(passport.initialize());
+//authenticate on each request
+app.use(passport.authenticate('session'));
 
+app.use(function(req, res ,next){
+  res.locals.user = req.user || null;
+  next();
+})
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
