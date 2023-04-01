@@ -10,13 +10,10 @@ router.get('/marketing', redirectGuests, pageController.renderMarketing);
 router.get('/sales', redirectGuests, pageController.renderSales);
 router.get('/hr', redirectGuests, pageController.renderHR);
 router.get('/profile', redirectGuests, pageController.viewProfile);
-
-router.get('/register', userController.renderRegistrationForm);
+router.get('/register', redirectGuests, userController.renderRegistrationForm);
 router.post('/register', userController.registerUser);
-
 router.get('/login', userController.renderLoginForm);
 router.post('/login', userController.loginUser);
-
 
 router.get('/logout', redirectGuests, userController.logout);
 

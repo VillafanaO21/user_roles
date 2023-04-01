@@ -12,21 +12,21 @@ html
         ul.nav.justify-content-end.main-nav
           if user
             if user.can('view dashboard')
-          li.nav-item
-            a.nav-link(href="/") Dashboard
-          li.nav-item
-            a.nav-link(href="/accounting") Accounting
-          li.nav-item
-            a.nav-link(href="/marketing") Marketing
-          li.nav-item
-            a.nav-link(href="/sales") Sales
-          li.nav-item
-            a.nav-link(href="/hr") HR
-          li.nav-item
-            a.nav-link(href="/login") Login
-          li.nav-item
-            a.nav-link(href="/layout") Layout
-            a.nav-link(href="/register") Register
+              li.nav-item
+                a.nav-link(href="/") Dashboard
+              li.nav-item
+                a.nav-link(href="/accounting") Accounting
+              li.nav-item
+                a.nav-link(href="/marketing") Marketing
+              li.nav-item
+                a.nav-link(href="/sales") Sales
+              li.nav-item
+                a.nav-link(href="/hr") HR
+              li.nav-item
+                a.nav-link(href="/login") Login
+              li.nav-item
+                a.nav-link(href="/layout") Layout
+                a.nav-link(href="/register") Register
 
-    div.container
-      block content
+        div.container
+          block content
